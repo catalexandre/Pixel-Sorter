@@ -10,3 +10,9 @@ The way the algorithm works is the following:
 The picture used as an example in this github is not my work. It is bob ross's work called "Grey Mountains": [https://www.pbs.org/video/gray-mountain-8oeOcv/](https://www.pbs.org/video/gray-mountain-8oeOcv/)
 
 I got the idea for this algorithm when I saw Acerola's video on the subject on youtube. His implementation is computed with a graphics card, whereas mine is of course computed with a CPU.
+
+![](LandscapeP3.png)
+![](LandscapeP3Luminosity.png)
+![](LandscapeP3Mask.png)
+![](LandscapeP3SortedLuminosity.png)
+![](LandscapeP3Sorted.png)
