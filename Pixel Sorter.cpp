@@ -19,6 +19,36 @@ int main()
     ofstream luminositySortedImage(inputFileName + "SortedLuminosity.ppm");
     ofstream luminosityImage(inputFileName + "luminosity.ppm");
 
+    if (!image.is_open())
+    {
+        cout << "Encountered an error when opening the input file. Terminating the program" << endl;
+        return 1;
+    }
+
+    if (!mask.is_open())
+    {
+        cout << "Encountered an error when opening the mask file. Terminating the program" << endl;
+        return 1;
+    }
+
+    if (!newImage.is_open())
+    {
+        cout << "Encountered an error when opening the newImage file. Terminating the program" << endl;
+        return 1;
+    }
+
+    if (!luminositySortedImage.is_open())
+    {
+        cout << "Encountered an error when opening the luminositySortedImage file. Terminating the program" << endl;
+        return 1;
+    }
+
+    if (!luminosityImage.is_open())
+    {
+        cout << "Encountered an error when opening the luminosityImage file. Terminating the program" << endl;
+        return 1;
+    }
+
     image.ignore(256, '\n');
 
     int width, height, maxValue;
@@ -75,11 +105,6 @@ int main()
         }
     }
 
-    /* for (int i = 0; i < (width + height * width) * 3; i++)
-     {
-         std::cout << colorData[i] << endl;
-     }*/
-
     for (int i = 0; i < width; i++)
     {
         int mPrevious = -1;
@@ -96,8 +121,6 @@ int main()
                 {
                     length++;
                 }
-
-                cout << "start x: " << start % width << " length: " << length << endl;
 
                 for (int k = start; k < ((length - 1) * width + start); k += width)
                 {
@@ -125,9 +148,10 @@ int main()
                     colorData[k * 3] = colorData[minElementPos * 3];
                     colorData[k * 3 + 1] = colorData[minElementPos * 3 + 1];
                     colorData[k * 3 + 2] = colorData[minElementPos * 3 + 2];
+
                     colorData[minElementPos * 3] = tempR;
                     colorData[minElementPos * 3 + 1] = tempG;
-                    colorData[minElementPos * 3 + 1] = tempB;
+                    colorData[minElementPos * 3 + 2] = tempB;
 
                 }
 
