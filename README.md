@@ -11,6 +11,7 @@ The picture used as an example in this github is not my work. It is bob ross's w
 
 I got the idea for this algorithm when I saw Acerola's video on the subject on youtube. His implementation is computed with a graphics card, whereas mine is of course computed with a CPU.
 
+These images were generated with a luminosity threshold of 0.5
 ![](LandscapeP3.png)
 ![](LandscapeP3Luminosity.png)
 ![](LandscapeP3Mask.png)
